@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Test Drive</title>
+    <link rel="stylesheet" href="buy.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="c1" style="background-color: blueviolet; background-image: linear-gradient(-45deg,black,transparent);">
+        <nav class="navbar navbar-expand-md  navbar-dark fixed-top "
+            style="color: black; position: relative; width: 100vw; ; margin-left: -10vw; height: 10vh;">
+            <div class="container-fluid ">
+                <a class="logp" href="#"><img src="/homeimgs/vehica-logo-white-retina.png" class="navbar-brand "
+                        alt="logo" style="position: fixed; left: 2vw;" id="log"></img></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar" style="margin-right: 1.5vw;  margin-top: 5vh;">Menu
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item dropdown no1" style="position: fixed; left:20vw; margin-top: -1.5vh;">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Search</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/cargallery/sedangal.html">Sedans</a></li>
+                                <li><a class="dropdown-item" href="/cargallery/supergal.html">supercars</a></li>
+                                <li><a class="dropdown-item" href="/cargallery/sportsgal.html">Sports</a></li>
+                                <li><a class="dropdown-item" href="/cargallery/suvgal.html">SUVs</a></li>
+                                <li><a class="dropdown-item" href="/cargallery/hyper.html">Hyper</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown no2" style="position: fixed; left: 30vw; margin-top: -1.5vh;">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Listing</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#fc">Featured</a></li>
+                                <li><a class="dropdown-item" href="#vp">Premium</a></li>
+                                <!-- <li><a class="dropdown-item" href="#"></a></li> -->
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown no3" style="position: fixed; left: 40vw; margin-top: -1.5vh;">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Main
+                                Menu</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/apiwork/forms.html">Loan Calculator</a></li>
+                                <li><a class="dropdown-item" href="/apiwork/message.html">Customer Care</a></li>
+                                <!-- <li><a class="dropdown-item" href="/apiwork/carbuy.html">Buy or Rent</a></li> -->
+                                <li><a class="dropdown-item" href="/apiwork/review.html">Review Cars</a></li>
+
+                            </ul>
+                        </li>
+
+
+
+
+
+                    </ul>
+
+
+
+
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar2" style=" margin-top: 5vh;">info
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar2">
+                    <ul class="navbar-nav">
+                        <li class="nav-item no4"><i class="fa-regular fa-user"
+                                style="color: #ff4607; margin-top: 15px; position: fixed; right: 40vw;"></i></li>
+                        <li class="nav-item no5"><a class="nav-link" href="/signin/index.html"
+                                style="position: fixed; right: 30vw;">SIGN IN ]|</a></li>
+                        <li class="nav-item no6"><a class="nav-link" href="/signin/register.html"
+                                style="position: fixed; right: 20vw;">|[ REGISTER</a></li>
+                        <li class="nav-item no7">
+                            <a class="nav-link cart" href="#" style="position: fixed; right: 10vw;">Cart
+                                <i class="fa-solid fa-cart-shopping" style="color: #ff4607;"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+        <h2 style="text-align: center;" id="msg"></h2>
+        <h1 style="color: #ff4607; margin-top: 1vh; margin-bottom: 1vh;">Fill the below details to continue Booking for a Test Drive.
+        </h1>
+        <div class="c2">
+            <form action="">
+                <div class="outdiv1">
+                    <div class="div1">
+                        <label for="fname">First Name : </label>
+                        <label for="lname">Last Name : </label>
+                    </div>
+                    <div class="div2">
+                        <input type="text" id="fname" required>
+                        <input type="text" id="lname" required>
+                    </div>
+                </div>
+                <div class="outdiv2">
+                    <div class="div3">
+                        <label for="email">Email : </label>
+                        <label for="pno">Phone Number : </label>
+                    </div>
+                    <div class="div4">
+                        <input type="email" id="email" required>
+                        <input type="number" id="pno" required>
+                    </div>
+
+                </div>
+                <div class="outdiv3">
+                    <legend>Address</legend>
+                    <label for="Country">Country:
+                        <input type="text" id="Country" required>
+                    </label>
+                    <label for="State">State:
+                        <input type="text" id="State" required>
+                    </label>
+                    <label for="District">District:
+                        <input type="text" id="District" required>
+                    </label>
+                    <label for="city">City:
+                        <input type="text" id="city" required>
+                    </label>
+                    <label for="Dno">Door Number:
+                        <input type="number" id="Dno" required>
+                    </label>
+                </div>
+                <div class="outdiv4">
+                    <legend>Payment Mode</legend>
+                    <div class="pay1">
+                        <legend>Debit Card</legend>
+                        <label for="Ano">Account No :
+                            <input type="number" id="Ano" required>
+                        </label>
+                        <label for="Vatill">Valid Till :
+                            <input type="number" id="Vatill" required>
+                        </label>
+                        <label for="cvv">CVV :
+                            <input type="number" id="cvv" required>
+                        </label>
+                    </div>
+                    <label for="bday">BirthDate:
+                        <input id="bday" type="date" required>
+                    </label>
+
+                </div>
+                <label for="policy" id="c">
+                    <input type="checkbox" id="policy" required> I have read, understood and agree to the Legal Notice
+                    for this site.*
+
+
+
+                </label>
+                <button type="submit"
+                    style="background-color: blueviolet; background-image: linear-gradient(45deg,white,transparent); "
+                    id="buynow"><b>Place Order</b></button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script>
+     document.getElementById('buynow').addEventListener('click', function() {
+  // Check if all fields are valid
+  if (validateForm()) {
+    // Display the alert
+    document.getElementById('msg').textContent = 'Your order has been placed!';
+    alert('Order is placed , Check you Email for Order details and Order History');
+    
+    // Display the message below the button
+   
+  } else {
+    // If form is not filled completely or some fields are invalid, display a message
+    alert('Please fill all the required fields and ensure they are valid.');
+  }
+});
+
+function validateForm() {
+  var firstName = document.getElementById('fname').value;
+  var lastName = document.getElementById('lname').value;
+  var email = document.getElementById('email').value;
+  var phoneNumber = document.getElementById('pno').value;
+  var country = document.getElementById('Country').value;
+  var state = document.getElementById('State').value;
+  var district = document.getElementById('District').value;
+  var city = document.getElementById('city').value;
+  var doorNumber = document.getElementById('Dno').value;
+  var accountNumber = document.getElementById('Ano').value;
+  var validTill = document.getElementById('Vatill').value;
+  var cvv = document.getElementById('cvv').value;
+  var dob = document.getElementById('bday').value;
+  
+  // Check if all required fields are filled and valid
+  if (firstName.trim() !== '' && lastName.trim() !== '' && email.trim() !== '' && phoneNumber.trim() !== '' && country.trim() !== '' && state.trim() !== '' && district.trim() !== '' && city.trim() !== '' && doorNumber.trim() !== '' && accountNumber.trim() !== '' && validTill.trim() !== '' && cvv.trim() !== '' && dob.trim() !== '') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+
+    </script>
+
+</body>
+
+</html>

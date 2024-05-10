@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poesche Car Site</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      overflow-x: hidden;
+     
+
+     
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    header nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .car-section {
+      padding: 20px;
+      height: 300px; 
+      overflow-y: auto; 
+    }
+
+    .container {
+      display: flex;
+      overflow-x: visible;
+      top : 1500px;
+    }
+
+    .slide {
+      display: flex;
+    }
+
+    .item {
+      flex: 0 0 auto;
+      margin-right: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f9f9f9;
+
+    }
+
+    
+    
+
+    .slideshow-container {
+      display: flex;
+      align-items: center;
+    }
+    .container {
+    position: absolute;
+    top: 98%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    box-shadow: 0 30px 50px white;
+}
+
+.container .slide .item {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px black;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide .item:nth-child(3) {
+    left: 120%;
+    height: 25vh;
+    width: 7vw;
+    top: 80vh;
+}
+
+.slide .item:nth-child(4) {
+    left: calc(100% + 220px);
+    height: 30vh;
+    width: 10vw;
+    top: 75vh;
+}
+
+.slide .item:nth-child(5) {
+    left: calc(65% + 440px);
+    height: 30vh;
+    width: 10vw;
+    top: 75vh;
+}
+
+.slide .item:nth-child(n + 6) {
+    left: calc(65% + 660px);
+    opacity: 0;
+    height: 30vh;
+    width: 10vw;
+    top: 75vh;
+}
+
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: white;
+    transform: translate(0, -50%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: none;
+}
+
+.slide .item:nth-child(2) .content {
+    display: block;
+}
+
+.content .name {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+
+.content button {
+    padding: 10px 20px;
+    border: none;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+.button{
+    width : 100%;
+    text-align: center;
+    position : absolute;
+    bottom : 20px;
+}
+.button button{
+    width : 40px;
+    height : 35px;
+    border-radius: 50%;
+    cursor : pointer;
+    margin : 0 5px;
+    border : 1px solid black;
+    transition: 0.3s;
+
+}
+.button button:hover{
+    background: grey;
+    color : white;
+}
+#cont2{
+    display: flex;
+    top : 1550px;
+}
+#cont3{
+    display:flex;
+    top : 2300px;
+}
+
+.nav1{
+    color : white;
+    text-decoration: none;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+.nav1:hover{
+   
+    background-color: white;
+    
+}
+.navbar{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer {
+     
+        width: 100%;
+        background-color: transparent;
+        color: #fff;
+       
+        text-align: center;
+        background-color: grey;
+    }
+#but1{
+    background-color: white;;
+}
+#but2{
+    background-color: white;;
+}
+
+body.dark-mode {
+            background-color: black;
+            color: white; 
+        }
+
+        body.light-mode {
+            background-color: white;
+            color: black; 
+        }
+    #bmwlogo{
+        width : 40px;
+        height : 60px;
+        transform: translateX(50%);
+
+    }
+ 
+    .links:hover{
+        color : green;
+        background-color: black;
+    }
+    .social-media{
+        transform: translateX(1.3%);
+    }
+    .link a {
+        text-decoration: none;
+    }
+
+    
+    .link li {
+        list-style-type: none;
+    }
+
+    #clock {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+            color : white;
+            position : fixed;
+            top : 0px;
+            right : 10px;
+        }
+        #datetime{
+            position : fixed;
+            top : 50px;
+            right : 10px;
+            color : white;
+
+        }
+
+        #weather{
+            position : fixed;
+            top : 100px;
+            right : 10px;
+            color : white;
+        
+        }
+        
+.button button:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.slide .item {
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.content {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.icon{
+    background-color: transparent;
+    color : white;
+}
+@media screen and (max-width: 768px) {
+      .item {
+        flex: 0 0 calc(50% - 40px);
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .item {
+        flex: 0 0 calc(100% - 40px);
+      }
+    }
+
+    .car-section {
+      max-height: calc(100vh - 150px); 
+      overflow-y: auto;
+    }
+
+    #loanCalculator{
+        background-color: white;
+        color : black;
+        position : relative;
+        top : 3000px;
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        display : block;
+
+    }
+    .footer{
+        height: 15vh;
+    }
+
+
+  </style>
+</head>
+<body class = "dark-mode">
+    <a href="#"><img src = "/apiwork/porsche/porsche_logo-removebg-preview.png" id = "logo" style="height: 6vh; width: 5.5vw;"></a>
+    
+  <header>
+    <h1>Welcome to Porsche</h1>
+    <nav>
+      <ul>
+        <li><a href="#cont1">Popular Picks</a></li>
+        <li><a href="#cont3">Featured Cars</a></li>
+        <!-- <li><a href="#suv">SUV</a></li> -->
+        <li><a href="/apiwork/forms.html" id="loanBtn">Loan Calculator</a></li>
+        <li><a href="/apiwork/message.html" >BMW CUSTOMER SUPPORT</a></li>
+        <li><a href="/apiwork/review.html" >Compare & Review</a></li>
+        <li><a href="/apiwork/porsche/porschebuy.html" >Test Drive & Buy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="clock"></div>
+  <div id="datetime"></div>
+  <div id="weather"></div>
+
+  <section id="popular-picks" class="car-section">
+    <div class="container" id = 'cont1'>
+
+        <div class="slide">
+    
+            <div class="item" style="background-image: url(/CARS/Porsche/SUVs/cayenne/cathumb.webp);">
+                <div class="content">
+                    <div class="name">Porsche Cayenne</div>
+                    <div class="des">Details </div>
+                    <a  href="/buynow.html"><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/Porsche/suvs/cayenne/cayenne.html"><button> View More</button></a>
+                   
+                </div>
+            </div>
+            <div class="item" style="background-image: url(/CARS/Porsche/SUVs/macan/macanthumb.webp);">
+                <div class="content">
+                    <div class="name">Porsche Macan</div>
+                    <div class="des">Details </div>
+                    <a  href="/buynow.html"><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/Porsche/suvs/macan/macan.html"><button> View More</button></a>
+                </div>
+            </div>
+    
+           
+    
+            <div class="item" style="background-image: url(/CARS/Porsche/SUVs/panamera/pathumb.webp);">
+                <div class="content">
+                    <div class="name">Porsche Panamera</div>
+                    <div class="des">Details </div>
+                    <a  href="/buynow.html"><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/Porsche/suvs/panamera/panamera.html"><button> View More</button></a>
+                </div>
+            </div>
+    
+            <div class="item" style="background-image: url(/CARS/Porsche/SUVs/taycan/taythumb.webp);">
+                <div class="content">
+                    <div class="name">Porsche Taycan</div>
+                    <div class="des">Details </div>
+                    <a  href="/buynow.html"><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/Porsche/suvs/taycan/taycan.html"><button> View More</button></a>
+                </div>
+            </div>
+    
+            <div class="item" style="background-image: url(/CARS/Porsche/Sports/911gt3rs/911thumb.webp);">
+                <div class="content">
+                    <div class="name">Porsche 911GTR 3RS</div>
+                    <div class="des">Details </div>
+                    <a  href="/buynow.html"><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/Porsche/sports/911gt3rs/911.html"><button> View More</button></a>
+                </div>
+            </div>
+    
+        </div>
+        <div class = "button">
+            <button class = "prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class = "next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+  </section>
+  <!-- <section id="sedans" class="car-section">
+    <div class="container" id = "cont2" style="margin-top: -50vh;">
+
+        <div class="slide">
+    
+            <div class="item" style="background-image: url(/CARS/BMW/Sports/);">
+                <div class="content">
+                    <div class="name">BMW X5</div>
+                    <div class="des">Details </div>
+                    <button><img src = '/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_electricity.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_engine.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 4/Tilda_Icons_25as_transmission.svg'></button>
+                </div>
+            </div>
+    
+            <div class="item" style="background-image: url(/CARS/BMW/Sports/);">
+                <div class="content">
+                    <div class="name">BMW X5</div>
+                    <div class="des">DEtails </div>
+                    <button><img src = '/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_electricity.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_engine.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 4/Tilda_Icons_25as_transmission.svg'></button>
+                    
+                </div>
+            </div>
+    
+            <div class="item" style="background-image: url(https://images.unsplash.com/photo-1616455579100-2ceaa4eb2d37?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym13JTIwY2FyfGVufDB8fDB8fHww);">
+                <div class="content">
+                    <div class="name">BMW X5</div>
+                    <div class="des">Details </div>
+                    <button><img src = '/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_electricity.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_engine.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 4/Tilda_Icons_25as_transmission.svg'></button>
+                </div>
+            </div>
+    
+            <div class="item" style="background-image: url(https://www.shutterstock.com/image-photo/seattle-washington-usa-march-31-600nw-2284495465.jpg);">
+                <div class="content">
+                    <div class="name">BMW X5</div>
+                    <div class="des">Details </div>
+                    <button><img src = '/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_electricity.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_engine.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 4/Tilda_Icons_25as_transmission.svg'></button>
+                </div>
+            </div>
+    
+            <div class="item" style="background-image: url(https://www.shutterstock.com/image-photo/seattle-washington-usa-march-31-600nw-2284495465.jpg);">
+                <div class="content">
+                    <div class="name">BMW X5</div>
+                    <div class="des">Details </div>
+                    <button><img src = '/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_electricity.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 2/Tilda_Icons_25as_engine.svg'>
+                    </button>
+                    <button><img src ='/Users/josephtmathew/Downloads/Tilda_Icons_25_Auto service 4/Tilda_Icons_25as_transmission.svg'></button>
+                </div>
+            </div>
+    
+        </div>
+        <div class = "button">
+            <button class = "prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class = "next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+  </section> -->
+  <section id="suv" class="car-section">
+    <div class="container" id = "cont3" style="margin-top: -180vh;">
+
+        <div class="slide">
+    
+            <div class="item" style="background-image: url(/CARS/Porsche/Sports/911gt3rs/911thumb.webp);">
+                <div class="content">
+                    <div class="name">Porsche 911GT3RS</div>
+                    <div class="des">Details </div>
+                    <a  href="/buynow.html"><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/Porsche/sports/911gt3rs/911.html"><button> View More</button></a>
+                </div>
+            </div>
+    
+            <div class="item" style="background-image: url(/CARS/Porsche/SUVs/taycan/taythumb.webp);">
+                <div class="content">
+                    <div class="name">Porsche Taycan</div>
+                    <div class="des">Details </div>
+                    <a  href="/buynow.html"><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/Porsche/suvs/taycan/taycan.html"><button> View More</button></a>
+                </div>
+            </div>
+    
+            <div class="item" style="background-image: url(/CARS/Porsche/SUVs/panamera/pathumb.webp);">
+                <div class="content">
+                    <div class="name">Porsche Panamera</div>
+                    <div class="des">Details </div>
+                    <a  href="/buynow.html"><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/Porsche/suvs/panamera/panamera.html"><button> View More</button></a>
+                </div>
+            </div>
+    
+            <!-- <div class="item" style="background-image: url(/CARS/BMW/Sedans/m440i/m44thumb.avif);">
+                <div class="content">
+                    <div class="name">BMW M440i</div>
+                    <div class="des">Details </div>
+                    <a><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/BMW/sedans/m440i/m440i.html"><button> View More</button></a>
+                </div>
+            </div>
+    
+            <div class="item" style="background-image: url(/CARS/Lexus/Sport/LC500/lc500thumb.png);">
+                <div class="content">
+                    <div class="name">BMW  LC500</div>
+                    <div class="des">Details </div>
+                    <a><button> Buy Now</button></a>
+                    <a href="/vpages/Cars/Lexus/sport/LC500/lc500.html"><button> View More</button></a>
+                </div>
+            </div> -->
+    
+        </div>
+        <div class = "button">
+            <button class = "prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class = "next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <footer style="margin-top: 140vh;">
+        <div class = "footer">
+            <div class = "foot" style="display: flex; justify-content: space-evenly; align-items: center;">
+            
+            <img id = "bmwlogo" src="/apiwork/porsche/porsche_logo-removebg-preview.png" alt="BMW Logo" class="logo"  style="height: 6vh; width: 5.5vw;">
+            
+            
+            <nav style="width: 50%;">
+              <ul class = "link" style="display: flex; justify-content: space-evenly;">
+                <li class = "links"></li></i><a  href="/index.html" style="text-decoration: none; color: #ccc;">Home</a></li>
+                <li class = "links"><a  href="https://www.bmw.in/en/topics/owners/service-repair.ht" style="text-decoration: none; color: #ccc;">Services</a></li>
+                <li class = "links"><a  href="mailto:contact.india@bmw.in" style="text-decoration: none; color: #ccc;">Contact Us</a></li>
+              </ul>
+            </nav>
+            
+            
+            <div class="social-media" style="display: flex; justify-content: space-evenly; width: 20%;">
+              <a href="https://www.facebook.com/bmw" style="text-decoration: none; color: #ccc;"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/BMW" style="text-decoration: none; color: #ccc;"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/bmw/" style="text-decoration: none; color: #ccc;"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          
+          
+          <div class="copyright" style="opacity: 0.5;">
+            &copy; 2024 BMW. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    
+
+  
+  <script>
+ document.addEventListener("DOMContentLoaded", function() {
+    
+    function moveNext(containerId) {
+        let container = document.getElementById(containerId);
+        let slide = container.querySelector('.slide');
+        let items = slide.querySelectorAll('.item');
+        slide.appendChild(items[0]);
+    }
+
+    
+    function movePrev(containerId) {
+        let container = document.getElementById(containerId);
+        let slide = container.querySelector('.slide');
+        let items = slide.querySelectorAll('.item');
+        let lastItem = items[items.length - 1];
+        slide.prepend(lastItem);
+    }
+
+    
+    let nextButtons = document.querySelectorAll('.next');
+    nextButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            let containerId = button.closest('.container').id;
+            moveNext(containerId);
+        });
+    });
+
+    
+    let prevButtons = document.querySelectorAll('.prev');
+    prevButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            let containerId = button.closest('.container').id;
+            movePrev(containerId);
+        });
+    });
+
+    
+
+    
+   
+});
+
+function updateClock() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const timeString = hours + ':' + minutes + ':' + seconds;
+    document.getElementById('clock').textContent = timeString;
+}
+
+
+setInterval(updateClock, 1000);
+
+
+updateClock();
+
+function displayDateTime() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+    const dateTimeString = now.toLocaleDateString('en-US', options);
+    const temperatureIcon = '<i class="fas fa-thermometer-half"></i>';
+    const clockIcon = '<i class="far fa-clock"></i>';
+    const timeString = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+    document.getElementById('datetime').innerHTML = `${dateTimeString} ${temperatureIcon} &nbsp; ${timeString} ${clockIcon}`;
+}
+
+
+setInterval(displayDateTime, 1000);
+
+function fetchWeather() {
+    
+    const apiKey = 'ba6f206f4c012cf71c81bb62fd3bdaa7';
+    const city = 'Kochi';
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const temperature = data.main.temp;
+            const weatherDescription = data.weather[0].description;
+            const weatherIcon = getWeatherIcon(data.weather[0].icon);
+            const weatherInfo = `<i class="${weatherIcon}"></i> Temperature: ${temperature}°C, Description: ${weatherDescription}`;
+            document.getElementById('weather').innerHTML = weatherInfo;
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+}
+
+function getWeatherIcon(iconCode) {
+    switch (iconCode) {
+        case '01d':
+            return 'fas fa-sun'; 
+        case '01n':
+            return 'fas fa-moon'; 
+        case '02d':
+        case '02n':
+            return 'fas fa-cloud-sun'; 
+        case '03d':
+        case '03n':
+            return 'fas fa-cloud'; 
+        case '04d':
+        case '04n':
+            return 'fas fa-cloud-meatball'; 
+        case '09d':
+        case '09n':
+            return 'fas fa-cloud-rain'; 
+        case '10d':
+        case '10n':
+            return 'fas fa-cloud-showers-heavy'; 
+        case '11d':
+        case '11n':
+            return 'fas fa-bolt'; 
+        case '13d':
+        case '13n':
+            return 'fas fa-snowflake'; 
+        case '50d':
+        case '50n':
+            return 'fas fa-smog'; 
+        default:
+            return 'fas fa-question-circle'; 
+    }
+}
+
+window.onload = function() {
+    displayDateTime();
+    fetchWeather();
+};
+
+
+const cars = [
+    { id: 1, name: "Toyota Camry", price: 25000, mpg: 30 },
+    { id: 2, name: "Honda Accord", price: 27000, mpg: 32 },
+    { id: 3, name: "Ford Fusion", price: 26000, mpg: 28 },
+];
+
+
+function populateCarSelect() {
+    const carSelects = document.querySelectorAll('select[name="car1"], select[name="car2"], select[name="carSelect"]');
+    carSelects.forEach(select => {
+        select.innerHTML = '';
+        cars.forEach(car => {
+            const option = document.createElement('option');
+            option.value = car.id;
+            option.textContent = car.name;
+            select.appendChild(option);
+        });
+    });
+}
+
+
+
+
+</script>
+
+    
+  </script>
+</body>
+</html>

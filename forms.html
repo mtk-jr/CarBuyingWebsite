@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        #loanCalculator {
+            background-color: #ffffff;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666666;
+        }
+        input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #monthlyPayment {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div id="loanCalculator">
+        <h2>Loan Calculator</h2>
+        <form id="loanForm">
+            <label for="loanAmount">Loan Amount ($):</label>
+            <input type="number" id="loanAmount" name="loanAmount" placeholder="Enter loan amount" required><br>
+    
+            <label for="interestRate">Annual Interest Rate (%):</label>
+            <input type="number" id="interestRate" name="interestRate" step="0.01" placeholder="Enter annual interest rate" required><br>
+    
+            <label for="loanTerm">Loan Term (years):</label>
+            <input type="number" id="loanTerm" name="loanTerm" placeholder="Enter loan term in years" required><br>
+    
+            <input type="submit" value="Calculate">
+        </form>
+    
+        <div id="monthlyPayment"></div>
+    </div>
+    <script>
+        const loanForm = document.getElementById("loanForm");
+        const monthlyPaymentDiv = document.getElementById("monthlyPayment");
+
+        loanForm.addEventListener("submit", function(event) {
+          event.preventDefault();
+
+          const loanAmount = parseFloat(document.getElementById("loanAmount").value);
+          const interestRate = parseFloat(document.getElementById("interestRate").value) / 100;
+          const loanTerm = parseFloat(document.getElementById("loanTerm").value);
+
+          const monthlyInterestRate = interestRate / 12;
+          const totalPayments = loanTerm * 12;
+          const numerator = loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalPayments);
+          const denominator = Math.pow(1 + monthlyInterestRate, totalPayments) - 1;
+          const monthlyPayment = numerator / denominator;
+
+          monthlyPaymentDiv.innerHTML = `<p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>`;
+        });
+
+        // Show/hide loan calculator
+        const loanBtn = document.getElementById("loanBtn");
+        const loanCalculator = document.getElementById("loanCalculator");
+        loanBtn.addEventListener("click", function() {
+          loanCalculator.style.display = loanCalculator.style.display === "block" ? "none" : "block";
+        });
+    </script>
+</body>
+</html>
+

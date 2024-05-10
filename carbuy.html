@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Car Models</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .car {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .car h2 {
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            height: 10vh;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BMW Car Models</h1>
+    </header>
+    <div class="container">
+     
+        <div class="car">
+            <h2><a href="bmw-m5.html">BMW F01</a></h2>
+            <img src="/CARS/BMW/Sedans/f01/f01thumb.jpeg" alt="BMW M5" style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 10400000</p>
+            <p><i class="fas fa-car"></i> Engine: 4.4L V8</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 600 HP</p>
+            <button onclick="purchase('BMW F01')">Purchase</button>
+            <button onclick="bookTestDrive('BMW F01')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="bmw-x5.html">BMW F30 </a></h2>
+            <img src="/CARS/BMW/Sedans/f30/f30thumb.jpg" alt="BMW X5"  style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 5900000</p>
+            <p><i class="fas fa-car"></i> Engine: 3.0L Inline-6</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 335 HP</p>
+            <button onclick="purchase('BMW F30')">Purchase</button>
+            <button onclick="bookTestDrive('BMW F30')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="bmw-3-series.html">BMW G20</a></h2>
+            <img src="/CARS/BMW/Sedans/g20/g20thumb.avif" alt="BMW 3 Series"  style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 4000000</p>
+            <p><i class="fas fa-car"></i> Engine: 2.0L Inline-4</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 255 HP</p>
+            <button onclick="purchase('BMW G20')">Purchase</button>
+            <button onclick="bookTestDrive('BMW G20')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="bmw-7-series.html">BMW G30</a></h2>
+            <img src="/CARS/BMW/Sedans/g30/g30thumb.avif"  style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 8600000</p>
+            <p><i class="fas fa-car"></i> Engine: 3.0L Inline-6</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 335 HP</p>
+            <button onclick="purchase('BMW G30')">Purchase</button>
+            <button onclick="bookTestDrive('BMW G30')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="bmw-i8.html">BMW M2</a></h2>
+            <img src="/CARS/BMW/Sedans/m2/m2thumb.avif"  style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 14750000</p>
+            <p><i class="fas fa-car"></i> Engine: 1.5L Inline-3 Hybrid</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 369 HP</p>
+            <button onclick="purchase('BMW M2')">Purchase</button>
+            <button onclick="bookTestDrive('BMW M2')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="bmw-m3.html">BMW M440i</a></h2>
+            <img src="/CARS/BMW/Sedans/m440i/m44thumb.avif" alt="BMW M3" style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 6990000</p>
+            <p><i class="fas fa-car"></i> Engine: 3.0L Inline-6</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 473 HP</p>
+            <button onclick="purchase('BMW M440i')">Purchase</button>
+            <button onclick="bookTestDrive('BMW M440i')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="bmw-x3.html">BMW M3 E46</a></h2>
+            <img src="/CARS/BMW/Sports/M3 E46/m3e46thumb.jpg" alt="BMW X3" style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 4300000</p>
+            <p><i class="fas fa-car"></i> Engine: 2.0L Inline-4</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 248 HP</p>
+            <button onclick="purchase('BMW M3 E46')">Purchase</button>
+            <button onclick="bookTestDrive('BMW M3 E46')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="bmw-z4.html">BMW M5 E39</a></h2>
+            <img src="/CARS/BMW/Sports/M5 E39/m5e39thumb.webp" alt="BMW Z4" style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 4970000</p>
+            <p><i class="fas fa-car"></i> Engine: 2.0L Inline-4</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 255 HP</p>
+            <button onclick="purchase('BMW M5 E39')">Purchase</button>
+            <button onclick="bookTestDrive('BMW M5 E39')">Book Test Drive</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enter Your Details to Purchase</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <label for="atm">ATM Details:</label>
+                <input type="password" id="atm" name="atm" required><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <!-- Test Drive Form Modal -->
+    <div id="testDriveModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book a Free Test Drive</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <label for="preferred-car">Preferred Car:</label>
+                <select id="preferred-car" name="preferred-car">
+                    <option value="BMW M5">BMW M5</option>
+                    <option value="BMW X5">BMW X5</option>
+                    <option value="BMW 3 Series">BMW 3 Series</option>
+                    <option value="BMW 7 Series">BMW 7 Series</option>
+                    <option value="BMW i8">BMW i8</option>
+                    <option value="BMW M3">BMW M3</option>
+                    <option value="BMW X3">BMW X3</option>
+                    <option value="BMW Z4">BMW Z4</option>
+                </select><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+    
+    function purchase(carModel) {
+        var purchaseModal = document.getElementById("purchaseModal");
+        purchaseModal.style.display = "block";
+        
+        document.getElementById("preferred-car").value = carModel;
+    }
+
+    function bookTestDrive(carModel) {
+        var testDriveModal = document.getElementById("testDriveModal");
+        testDriveModal.style.display = "block";
+        
+        document.getElementById("preferred-car-test-drive").value = carModel;
+    }
+
+    
+    document.querySelectorAll('.close').forEach(function(el) {
+        el.onclick = function() {
+            var modal = el.parentElement.parentElement;
+            modal.style.display = "none";
+        }
+    });
+
+    
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+
+
+    </script>
+</body>
+</html>

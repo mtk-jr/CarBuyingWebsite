@@ -1,0 +1,82 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    
+    
+    
+    
+}
+.c1{
+    height: 150vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    
+}
+
+#log{
+    height: 30px;
+    width: 120px;
+}
+
+form{
+    height: 120vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius:  0.5vw;
+  background-color: rgba(225, 91, 91, 0.751);
+  background-image: linear-gradient(45deg,rgba(68, 135, 212, 0.785),transparent);
+  padding-bottom: 3vh;
+}
+.c2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.outdiv1,.outdiv2{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+   
+}
+.div1,.div2,.div3,.div4{
+    width: 80vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+legend{
+    text-align: center;
+}
+.outdiv3,.outdiv4,.pay1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+}
+#c{
+    margin-left: 20vw;
+}
+form button{
+    border: none;
+    border-radius: 2vw;
+    width: 80%;
+    margin-left: 10%;
+}
+
+h1{
+    text-align: center;
+    color: rgb(232, 106, 127);
+    z-index: 10;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}

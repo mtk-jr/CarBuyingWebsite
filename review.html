@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare BMW Cars</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            background-image: url("https://www.shutterstock.com/image-photo/seattle-washington-usa-march-31-600nw-2284495465.jpg");
+            box-sizing: border-box;
+        }
+
+        .car-section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .comparison-result {
+            margin-top: 20px;
+            border-top: 2px solid #ddd;
+            padding-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .tick-icon {
+            color: green;
+        }
+
+        .cross-icon {
+            color: red;
+        }
+
+        .review-section {
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .review-form label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+
+        .review-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .review-button:hover {
+            background-color: #0056b3;
+        }
+
+        .reviews-container {
+            margin-top: 20px;
+        }
+
+        .review {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            margin-bottom: 10px;
+        }
+
+        .review strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .review p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <section id="comparison" class="car-section">
+        <h2>Compare BMW Cars</h2>
+        <form id="comparisonForm">
+            <label for="car1">Car 1:</label>
+            <select name="car1" id="car1">
+                <!-- Populate options dynamically with JavaScript -->
+            </select>
+            <label for="car2">Car 2:</label>
+            <select name="car2" id="car2">
+                <!-- Populate options dynamically with JavaScript -->
+            </select>
+            <button type="submit">Compare</button>
+        </form>
+        <div id="comparisonResult" class="comparison-result">
+            <!-- Display comparison result here -->
+        </div>
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+    </section>
+
+    <section id="reviews" class="review-section">
+        <h2>Reviews</h2>
+        <form id="reviewForm" class="review-form">
+            <label for="carSelect">Select Car:</label>
+            <select name="carSelect" id="carSelect">
+                <!-- Populate options dynamically with JavaScript -->
+            </select>
+            <label for="review">Write Review:</label>
+            <textarea name="review" id="review" rows="4" placeholder="Write your review here"></textarea>
+            <button type="submit" class="review-button">Submit Review</button>
+        </form>
+        <div id="reviewsContainer" class="reviews-container">
+            <!-- Display reviews here -->
+        </div>
+    </section>
+
+    <script>
+        // JavaScript code
+        const cars = [
+            { id: 1, name: "BMW 3 Series", price: 45000, mpg: 30, mileage: "20 km/l", maxSpeed: "200 km/h", warranty: true, powerSteering: true, touchScreen: false },
+            { id: 2, name: "BMW X5", price: 60000, mpg: 25, mileage: "18 km/l", maxSpeed: "220 km/h", warranty: false, powerSteering: true, touchScreen: true },
+            { id: 3, name: "BMW M5", price: 75000, mpg: 20, mileage: "16 km/l", maxSpeed: "250 km/h", warranty: true, powerSteering: true, touchScreen: false },
+            { id: 4, name: "BMW X3", price: 55000, mpg: 28, mileage: "22 km/l", maxSpeed: "210 km/h", warranty: false, powerSteering: false, touchScreen: true },
+            { id: 5, name: "BMW 5 Series", price: 60000, mpg: 27, mileage: "19 km/l", maxSpeed: "215 km/h", warranty: true, powerSteering: true, touchScreen: true },
+            { id: 6, name: "BMW X7", price: 80000, mpg: 22, mileage: "15 km/l", maxSpeed: "240 km/h", warranty: true, powerSteering: true, touchScreen: true },
+            { id: 7, name: "BMW 7 Series", price: 85000, mpg: 23, mileage: "18 km/l", maxSpeed: "235 km/h", warranty: true, powerSteering: true, touchScreen: true },
+            { id: 8, name: "BMW i8", price: 100000, mpg: 30, mileage: "20 km/l", maxSpeed: "250 km/h", warranty: true, powerSteering: true, touchScreen: true }
+        ];
+
+        // Function to populate car select options
+        function populateCarSelect() {
+            const carSelects = document.querySelectorAll('select[name="car1"], select[name="car2"], select[name="carSelect"]');
+            carSelects.forEach(select => {
+                select.innerHTML = '';
+                cars.forEach(car => {
+                    const option = document.createElement('option');
+                    option.value = car.id;
+                    option.textContent = car.name;
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        // Handle comparison form submission
+        document.getElementById('comparisonForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const car1Id = parseInt(document.querySelector('select[name="car1"]').value);
+            const car2Id = parseInt(document.querySelector('select[name="car2"]').value);
+            const car1 = cars.find(car => car.id === car1Id);
+            const car2 = cars.find(car => car.id === car2Id);
+            if (car1 && car2) {
+                displayComparison(car1, car2);
+            } else {
+                displayErrorMessage('Please select two cars to compare.');
+            }
+        });
+
+        // Function to display comparison result
+        function displayComparison(car1, car2) {
+            const comparisonResult = document.getElementById('comparisonResult');
+            comparisonResult.innerHTML = `
+                <h3>Comparison Result</h3>
+                <table>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>${car1.name}</th>
+                        <th>${car2.name}</th>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>$${car1.price}</td>
+                        <td>$${car2.price}</td>
+                    </tr>
+                    <tr>
+                        <td>MPG</td>
+                        <td>${car1.mpg}</td>
+                        <td>${car2.mpg}</td>
+                    </tr>
+                    <tr>
+                        <td>Mileage</td>
+                        <td>${car1.mileage}</td>
+                        <td>${car2.mileage}</td>
+                    </tr>
+                    <tr>
+                        <td>Maximum Speed</td>
+                        <td>${car1.maxSpeed}</td>
+                        <td>${car2.maxSpeed}</td>
+                    </tr>
+                    <tr>
+                        <td>Warranty</td>
+                        <td>${car1.warranty ? '<i class="fas fa-check tick-icon"></i>' : '<i class="fas fa-times cross-icon"></i>'}</td>
+                        <td>${car2.warranty ? '<i class="fas fa-check tick-icon"></i>' : '<i class="fas fa-times cross-icon"></i>'}</td>
+                    </tr>
+                    <tr>
+                        <td>Power Steering</td>
+                        <td>${car1.powerSteering ? '<i class="fas fa-check tick-icon"></i>' : '<i class="fas fa-times cross-icon"></i>'}</td>
+                        <td>${car2.powerSteering ? '<i class="fas fa-check tick-icon"></i>' : '<i class="fas fa-times cross-icon"></i>'}</td>
+                    </tr>
+                    <tr>
+                        <td>Touch Screen</td>
+                        <td>${car1.touchScreen ? '<i class="fas fa-check tick-icon"></i>' : '<i class="fas fa-times cross-icon"></i>'}</td>
+                        <td>${car2.touchScreen ? '<i class="fas fa-check tick-icon"></i>' : '<i class="fas fa-times cross-icon"></i>'}</td>
+                    </tr>
+                </table>
+            `;
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+
+        // Function to display error message
+        function displayErrorMessage(message) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+        }
+
+        // Handle review form submission
+        document.getElementById('reviewForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const carId = parseInt(document.querySelector('select[name="carSelect"]').value);
+            const review = document.getElementById('review').value;
+            const car = cars.find(car => car.id === carId);
+            if (car && review) {
+                displayReview(car, review);
+                // Clear review form
+                document.getElementById('review').value = '';
+            } else {
+                alert('Please select a car and write a review.');
+            }
+        });
+
+        // Function to display review
+        function displayReview(car, review) {
+            const reviewsContainer = document.getElementById('reviewsContainer');
+            const reviewElement = document.createElement('div');
+            reviewElement.classList.add('review');
+            reviewElement.innerHTML = `
+                <strong>${car.name}</strong>
+                <p>${review}</p>
+            `;
+            reviewsContainer.appendChild(reviewElement);
+        }
+
+        // Initialize
+        populateCarSelect();
+    </script>    
+</body>
+</html>

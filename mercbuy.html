@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes Car Models</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .car {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .car h2 {
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            height: 10vh;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mercedes Car Models</h1>
+    </header>
+    <div class="container">
+     
+        <div class="car">
+            <h2><a href="/vpages/Cars/Merc/sedan/Cclass/cclass.html">Mercedes C Class</a></h2>
+            <img src="/CARS/Merc/Sedan/C class/Cclassthumb.webp" alt="BMW M5" style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 10400000</p>
+            <p><i class="fas fa-car"></i> Engine: 4.4L V8</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 600 HP</p>
+            <button onclick="purchase('Mercedes C Class')">Purchase</button>
+            <button onclick="bookTestDrive('Mercedes C Class')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="/vpages/Cars/Merc/sedan/CLS/cls.html">Mercedes CLS</a></h2>
+            <img src="/CARS/Merc/Sedan/CLS/clsthumb.jpg" alt="BMW X5"  style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 5900000</p>
+            <p><i class="fas fa-car"></i> Engine: 3.0L Inline-6</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 335 HP</p>
+            <button onclick="purchase('Mercedes CLS')">Purchase</button>
+            <button onclick="bookTestDrive('Mercedes CLS')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="/vpages/Cars/Merc/sports/amg gt r/amg.html">Mersedes AMG GT R</a></h2>
+            <img src="/CARS/Merc/SPORTS/amg gt r/amgthumb.webp" alt="BMW 3 Series"  style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 4000000</p>
+            <p><i class="fas fa-car"></i> Engine: 2.0L Inline-4</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 255 HP</p>
+            <button onclick="purchase('Mersedes AMG GT R')">Purchase</button>
+            <button onclick="bookTestDrive('Mersedes AMG GT R')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="/vpages/Cars/Merc/sports/C63 S/c63.html">Mercedes C63</a></h2>
+            <img src="/CARS//Merc/SPORTS/C63 S/c63thumb.webp"  style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 8600000</p>
+            <p><i class="fas fa-car"></i> Engine: 3.0L Inline-6</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 335 HP</p>
+            <button onclick="purchase('Mercedes C63')">Purchase</button>
+            <button onclick="bookTestDrive('Mercedes C63')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="/vpages/Cars/Merc/super/SL65/sl65.html">Mercedes SL65</a></h2>
+            <img src="/CARS/Merc/SUPER/SL65/sl65thumb.webp"  style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 14750000</p>
+            <p><i class="fas fa-car"></i> Engine: 1.5L Inline-3 Hybrid</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 369 HP</p>
+            <button onclick="purchase('Mercedes SL65')">Purchase</button>
+            <button onclick="bookTestDrive('Mercedes SL65')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="/vpages/Cars/Merc/suv/GLA/gla.html">Mercedes GLA</a></h2>
+            <img src="/CARS/Merc/SUV/GLA/glathumb.jpg" alt="BMW M3" style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 6990000</p>
+            <p><i class="fas fa-car"></i> Engine: 3.0L Inline-6</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 473 HP</p>
+            <button onclick="purchase('Mercedes GLA')">Purchase</button>
+            <button onclick="bookTestDrive('Mercedes GLA')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="/vpages/Cars/Merc/suv/GLC/glc.html">Mercedes GLC</a></h2>
+            <img src="/CARS/Merc/SUV/GLC/glcthumb.jpg" alt="BMW X3" style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 4300000</p>
+            <p><i class="fas fa-car"></i> Engine: 2.0L Inline-4</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 248 HP</p>
+            <button onclick="purchase('Mercedes GLC')">Purchase</button>
+            <button onclick="bookTestDrive('Mercedes GLC')">Book Test Drive</button>
+        </div>
+        <div class="car">
+            <h2><a href="/vpages/Cars/Merc/suv/GLE/gle.html"></a>Mercedes GLE</h2>
+            <img src="/CARS/Merc/SUV/GLE/glethumb.jpg" alt="BMW Z4" style="height: 40vh; width: 40vw;">
+            <p><i class="fas fa-dollar-sign"></i> Price: 4970000</p>
+            <p><i class="fas fa-car"></i> Engine: 2.0L Inline-4</p>
+            <p><i class="fas fa-tachometer-alt"></i> Horsepower: 255 HP</p>
+            <button onclick="purchase('Mercedes GLE')">Purchase</button>
+            <button onclick="bookTestDrive('Mercedes GLE')">Book Test Drive</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enter Your Details to Purchase</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <label for="atm">ATM Details:</label>
+                <input type="password" id="atm" name="atm" required><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <!-- Test Drive Form Modal -->
+    <div id="testDriveModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book a Free Test Drive</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <label for="preferred-car">Preferred Car:</label>
+                <select id="preferred-car" name="preferred-car">
+                    <option value="BMW M5">BMW M5</option>
+                    <option value="BMW X5">BMW X5</option>
+                    <option value="BMW 3 Series">BMW 3 Series</option>
+                    <option value="BMW 7 Series">BMW 7 Series</option>
+                    <option value="BMW i8">BMW i8</option>
+                    <option value="BMW M3">BMW M3</option>
+                    <option value="BMW X3">BMW X3</option>
+                    <option value="BMW Z4">BMW Z4</option>
+                </select><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+    
+    function purchase(carModel) {
+        var purchaseModal = document.getElementById("purchaseModal");
+        purchaseModal.style.display = "block";
+        
+        document.getElementById("preferred-car").value = carModel;
+    }
+
+    function bookTestDrive(carModel) {
+        var testDriveModal = document.getElementById("testDriveModal");
+        testDriveModal.style.display = "block";
+        
+        document.getElementById("preferred-car-test-drive").value = carModel;
+    }
+
+    
+    document.querySelectorAll('.close').forEach(function(el) {
+        el.onclick = function() {
+            var modal = el.parentElement.parentElement;
+            modal.style.display = "none";
+        }
+    });
+
+    
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+
+
+    </script>
+</body>
+</html>
